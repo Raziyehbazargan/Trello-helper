@@ -43,8 +43,9 @@
     "multer": "^1.3.0",
     "node-sass": "^4.5.0",
     "node-uuid": "^1.4.7",
+    "oauth": "^0.9.15",
     "path": "^0.12.7",
-    "superagent": "^3.5.0",
+    "superagent": "^3.5.0"
   },
   "devDependencies": {
     "concurrently": "^3.0.0",
