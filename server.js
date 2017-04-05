@@ -10,6 +10,7 @@ const Promise = require('bluebird');
 const debug = require('debug')('Trello-Report:server');
 
 // app modules
+const authRouter = require('./route/auth-router.js');
 const errorMiddleware = require('./lib/error-middleware.js');
 
 // load environment vars
@@ -25,11 +26,12 @@ app.use(express.static(`${__dirname}/build`));
 // app middleware
 app.use(cors());
 app.use(morgan('dev'));
+app.use(authRouter);
 app.use(errorMiddleware);
 
 // start server
 const server = module.exports = app.listen(PORT, () => {
-  debug(`server up on ${PORT}`);
+  debug(`server up on ${server.address().port}`);
 });
 
 server.isRunning = true;
