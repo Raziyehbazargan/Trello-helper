@@ -5,7 +5,8 @@ const createError = require('http-errors');
 const jsonParser = require('body-parser').json();
 var http = require('http')
 var OAuth = require('oauth').OAuth
-var url = require('url')
+var url = require('url');
+var session = require('express-session');
 const trelloOAUTH = require('../lib/trello-oauth-middleware.js');
 const debug = require('debug')('abba:auth-router');
 
@@ -21,7 +22,16 @@ authRouter.get('/api/auth/login', trelloOAUTH.generateToken, function(req, res, 
 
 authRouter.get('/api/auth/trello/callback',trelloOAUTH.generateAccessToken, function(req, res, next) {
   debug('GET /api/auth/trello/callback');
-  console.log('in callback route');
+    console.log('req.session in callback-->',req.session)
+    //next();
+  //res.redirect(`./src/index.html`)
+});
+
+authRouter.get('/api/test', trelloOAUTH.userAccess, function(req, res, next) {
+  debug('GET /api/test');
+    //console.log('req.session in test-->',req.userTokens)
+    //next()
+  //res.redirect(`./src/index.html`)
 });
 //http://moonlitscript.com/post.cfm/how-to-use-oauth-and-twitter-in-your-node-js-expressjs-app/
 // In a real app, the accessToken and accessTokenSecret should be stored

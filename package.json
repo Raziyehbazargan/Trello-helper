@@ -41,6 +41,7 @@
     "del": "^2.2.2",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
+    "express-session": "^1.15.2",
     "http-errors": "^1.6.1",
     "jsonwebtoken": "^7.3.0",
     "morgan": "^1.8.1",
