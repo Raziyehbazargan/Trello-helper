@@ -5,8 +5,8 @@ const cors = require('cors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const express = require('express');
+const session = require('express-session');
 const Promise = require('bluebird');
-
 const debug = require('debug')('Trello-Report:server');
 
 // app modules
@@ -21,8 +21,9 @@ const PORT = process.env.PORT;
 const app = express();
 
 // app routes
+//app.use(express.cookieParser('S3CRE7'));
 app.use(express.static(`${__dirname}/build`));
-
+app.use(session({secret: 'keyboard cat'}))
 // app middleware
 app.use(cors());
 app.use(morgan('dev'));
