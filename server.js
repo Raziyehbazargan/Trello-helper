@@ -11,6 +11,7 @@ const debug = require('debug')('Trello-Report:server');
 
 // app modules
 const authRouter = require('./route/auth-router.js');
+const trelloRouter = require('./route/trello-router.js');
 const errorMiddleware = require('./lib/error-middleware.js');
 
 // load environment vars
@@ -28,6 +29,7 @@ app.use(session({secret: 'keyboard cat'}))
 app.use(cors());
 app.use(morgan('dev'));
 app.use(authRouter);
+app.use(trelloRouter);
 app.use(errorMiddleware);
 
 // start server
