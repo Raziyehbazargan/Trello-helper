@@ -28,8 +28,8 @@
     "type": "git",
     "url": "git+https://github.com/Raziyehbazargan/Trello-report.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ['api','trello','oauth'],
+  "author": "Raziyeh Bazargan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Raziyehbazargan/Trello-report/issues"
