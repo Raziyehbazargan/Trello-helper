@@ -22,6 +22,7 @@ trelloRouter.get('/api/trello/boards', trelloOAUTH.userAccess, function(req, res
        res.send(data)
      }
    );
+   res.send(['yyyes','wwow']);
 });
 
 trelloRouter.get('/api/trello/boards/:id', trelloOAUTH.userAccess, function(req, res, next) {
