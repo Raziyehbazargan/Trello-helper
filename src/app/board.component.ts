@@ -2,22 +2,23 @@
 
 import { Component, OnInit } from '@angular/core';
 import { BoardsService } from './board.service';
-//import { Board } from './board';
+import { Board } from './model/board';
 
 @Component({
   selector: 'boards',
-  templateUrl: '../templates/board.component.html',
+  templateUrl: '../../templates/board.component.html',
   providers: [BoardsService]
 })
 
 export class BoardComponent implements OnInit {
-  boards: [];
+  boards: Board[];
 
   constructor(private service: BoardsService) {}
 
   ngOnInit() {
     this.service.getBoards().subscribe(boards => {
       this.boards = boards;
+      console.log('clicked me')
     })
   }
 }
