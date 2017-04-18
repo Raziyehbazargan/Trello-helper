@@ -1,8 +1,8 @@
 'use strict';
 
 import { Component, OnInit } from '@angular/core';
-import { BoardsService } from './board.service';
-import { Board } from './model/board';
+import { BoardsService } from '../services/board.service';
+import { Board } from '../models/board';
 
 @Component({
   selector: 'boards',

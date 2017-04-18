@@ -5,8 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // for using NgModel and input tg
 import { HttpModule } from '@angular/http';
 
-import { AppComponent }  from './app.component';
-import { BoardComponent }  from './board.component';
+import { AppComponent }  from './components/app.component';
+import { BoardComponent }  from './components/board.component';
 
 @NgModule({
   imports:      [
