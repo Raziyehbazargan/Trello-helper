@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 
-import { Board } from './model/board';
+import { Board } from '../models/board';
 
 @Injectable()
 export class BoardsService {
