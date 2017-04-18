@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 // Two-way binding
 @Component({
   selector: 'my-app',
-  template: `<boards></boards>`
+  template: `<landing></landing>`
 })
 
 export class AppComponent {

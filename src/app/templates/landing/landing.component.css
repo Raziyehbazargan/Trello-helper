@@ -1,0 +1,19 @@
+#navbar {
+  background-color: #051e4c;
+  height: 2em;
+  left: 0;
+  padding: 1em .75em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+#middle-sec {
+  background-color: #f5ea92;
+  padding:3em 1em;
+}
+
+#last-sec {
+  background-color: #0079bf;
+}
