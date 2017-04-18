@@ -1,17 +1,22 @@
 #navbar {
   background-color: #051e4c;
-  height: 2em;
+  height: 1.3em;
   left: 0;
-  padding: 1em .75em;
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 100;
+  margin: 0;
+  padding: 20px;
+  right: 0;
+  top: 0;
+  left: 0;
 }
 
 #middle-sec {
   background-color: #f5ea92;
-  padding:3em 1em;
+  padding:8em 1em;
+  margin: 0;
+  right: 0;
 }
 
 #last-sec {
