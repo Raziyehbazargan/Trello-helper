@@ -4,10 +4,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // for using NgModel and input tg
 import { HttpModule } from '@angular/http';
+import { RouterModule }   from '@angular/router';
 
 import { AppComponent }  from './components/app.component';
-import { BoardComponent }  from './components/board.component';
-import { LandingComponent }  from './views/landing.component';
+import { BoardComponent }  from './components/board/board.component';
+import { LandingComponent }  from './components/landing/landing.component';
 
 @NgModule({
   imports:      [
