@@ -9,8 +9,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent }  from './components/app/app.component';
 import { BoardComponent }  from './components/board/board.component';
 import { LandingComponent }  from './components/landing/landing.component';
+import { HomeComponent }  from './components/home/home.component';
 
 const appRoutes: Routes = [
+  // {path: 'api/auth/trello/callback', redirectTo: 'home'},
+  {path: 'home', component: HomeComponent},
   {path: '', component: LandingComponent},
   //{path: '/login', component: BoardComponent, data: {title: 'Login with Trello'}}, //data: Use it to store items such as page titles, breadcrumb text, and other read-only, static data.
   {path: '', redirectTo: '/', pathMatch: 'full'}
@@ -20,6 +23,9 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
+  providers: [
+    { provide: 'Window',  useValue: window }
+  ],
   imports:      [
     RouterModule.forRoot(appRoutes),
     HttpModule,
@@ -28,7 +34,8 @@ const appRoutes: Routes = [
   ],
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+    HomeComponent
   ],
   bootstrap:    [ AppComponent ]
 })

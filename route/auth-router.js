@@ -17,13 +17,16 @@ var access_token;
 authRouter.get('/api/auth/login', trelloOAUTH.generateToken, function(req, res, next) {
   console.log('I am in login route');
   access_token = req.trelloOAUTH.token_secret;
-  res.redirect(`https://trello.com/1/OAuthAuthorizeToken?oauth_token=${req.trelloOAUTH.token}&name=${req.trelloOAUTH.app_name}`)
+  res.send(JSON.stringify({ oauth_token: req.trelloOAUTH.token, name: req.trelloOAUTH.app_name }));
+  next();
+  //res.redirect(`https://trello.com/1/OAuthAuthorizeToken?oauth_token=${req.trelloOAUTH.token}&name=${req.trelloOAUTH.app_name}`)
 })
 
 authRouter.get('/api/auth/trello/callback',trelloOAUTH.generateAccessToken, function(req, res, next) {
   debug('GET /api/auth/trello/callback');
     console.log('req.session in callback-->',req.session)
-  //res.redirect(`./src/index.html`)
+    return res.redirect(`home`)
+    next();
 });
 
 authRouter.get('/api/trello/boards', trelloOAUTH.userAccess, function(req, res, next) {
