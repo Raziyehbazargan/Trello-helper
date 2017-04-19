@@ -1,24 +1,4 @@
-/*#navbar {
-  background-color: #051e4c;
-  height: 1.3em;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  margin: 0;
-  padding: 20px;
-  right: 0;
-  top: 0;
-  left: 0;
+header nav {
+  background-color: #323031;
+  color: #fff;
 }
-
-#middle-sec {
-  background-color: #f5ea92;
-  padding:8em 1em;
-  margin: 0;
-  right: 0;
-}
-
-#last-sec {
-  background-color: #0079bf;
-}*/

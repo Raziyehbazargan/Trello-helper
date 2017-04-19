@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   template: './home.component.html'
 })
 
-export class Home {
+export class HomeComponent {
   constructor() {}
 }
