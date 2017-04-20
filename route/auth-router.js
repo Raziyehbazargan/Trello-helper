@@ -1,31 +1,28 @@
 'use strict';
 
+const http = require('http');
+const OAuth = require('oauth').OAuth;
 const Router = require('express').Router;
 const createError = require('http-errors');
 const jsonParser = require('body-parser').json();
-var http = require('http')
-var OAuth = require('oauth').OAuth
-var url = require('url');
-var session = require('express-session');
-const trelloOAUTH = require('../lib/trello-oauth-middleware.js');
+const session = require('express-session');
 const debug = require('debug')('abba:auth-router');
+
+const trelloOAUTH = require('../lib/trello-oauth-middleware.js');
 
 const authRouter = module.exports = Router();
 
-var access_token;
-
 authRouter.get('/api/auth/login', trelloOAUTH.generateToken, function(req, res, next) {
   console.log('I am in login route');
-  access_token = req.trelloOAUTH.token_secret;
   res.send(JSON.stringify({ oauth_token: req.trelloOAUTH.token, name: req.trelloOAUTH.app_name }));
   next();
 })
 
 authRouter.get('/api/auth/trello/callback',trelloOAUTH.generateAccessToken, function(req, res, next) {
   debug('GET /api/auth/trello/callback');
-    console.log('req.session in callback-->',req.session)
-  //  return res.redirect(`home`)
-    next();
+
+    console.log('I in callback-->in callback route', req.accessToken)
+    return res.redirect(`/#/home?token=${req.query.oauth_token}`);
 });
 
 authRouter.get('/api/trello/boards', trelloOAUTH.userAccess, function(req, res, next) {
@@ -63,6 +60,3 @@ authRouter.get('/api/trello/boards/:id/cards', trelloOAUTH.userAccess, function(
      }
    );
 });
-
-//http://moonlitscript.com/post.cfm/how-to-use-oauth-and-twitter-in-your-node-js-expressjs-app/
-// In a real app, the accessToken and accessTokenSecret should be stored
