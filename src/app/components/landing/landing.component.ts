@@ -15,7 +15,7 @@ export class LandingComponent {
     console.log('in logi method')
     return this.http.get(`http://localhost:4000/api/auth/login`)
     .subscribe((res: Response) => {
-       let data  = res.json();
+       let data = res.json();
        window.location.href = `https://trello.com/1/OAuthAuthorizeToken?oauth_token=${data.oauth_token}&name=${data.name}`;
     })
   }
