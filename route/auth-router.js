@@ -22,7 +22,8 @@ authRouter.get('/api/auth/trello/callback',trelloOAUTH.generateAccessToken, func
   debug('GET /api/auth/trello/callback');
 
     console.log('I in callback-->in callback route', req.accessToken)
-    return res.redirect(`/#/home?token=${req.query.oauth_token}`);
+    //return res.redirect(`/#/home?token=${req.query.oauth_token}`);
+    return res.redirect('http://localhost:3000/board')
 });
 
 authRouter.get('/api/trello/boards', trelloOAUTH.userAccess, function(req, res, next) {
