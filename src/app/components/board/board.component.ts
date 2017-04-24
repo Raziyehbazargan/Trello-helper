@@ -6,19 +6,23 @@ import { Board } from '../../models/board';
 
 @Component({
   selector: 'boards',
-  templateUrl: '../../templates/board.component.html',
+  templateUrl: './board.template.html',
   providers: [BoardsService]
 })
 
 export class BoardComponent implements OnInit {
-  boards: Board[];
+  userInfo: string;
+  boardsIDs: string[];
 
   constructor(private service: BoardsService) {}
 
   ngOnInit() {
-    this.service.getBoards().subscribe(boards => {
-      this.boards = boards;
-      console.log('clicked me')
+    this.service.getBoards()
+    //.map((val: any) => JSON.parse(val))
+    .subscribe((data:any) => {
+      this.userInfo = data.url;
+      console.log('this is userinfo', data);
+      this.boardsIDs = data['idBoards'];
     })
   }
 }
