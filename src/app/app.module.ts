@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms'; // for using NgModel and input tg
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent }  from './components/app/app.component';
+import { AppComponent }  from './app.component';
 import { BoardComponent }  from './components/board/board.component';
 import { LandingComponent }  from './components/landing/landing.component';
 import { HomeComponent }  from './components/home/home.component';

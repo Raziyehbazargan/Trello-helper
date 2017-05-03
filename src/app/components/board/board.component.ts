@@ -21,7 +21,6 @@ export class BoardComponent implements OnInit {
     //.map((val: any) => JSON.parse(val))
     .subscribe((data:any) => {
       this.userInfo = data.url;
-      console.log('this is userinfo', data);
       this.boardsIDs = data['idBoards'];
     })
   }
