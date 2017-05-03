@@ -25,7 +25,7 @@ const app = express();
 //app.use(express.cookieParser('S3CRE7'));
 app.use(express.static(`${__dirname}/build`));
 app.use(session({secret: 'keyboard cat'}))
-// app middleware
+
 app.use(cors());
 app.use(morgan('dev'));
 app.use(authRouter);
