@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'user-profile',
-  templateUrl: './user-profile.template.html'
+  selector: 'breadcrumb',
+  templateUrl: './breadcrumb.template.html'
 })
 
-export class UserProfileComponent {
+export class BreadCrumbComponent {
   constructor() {}
   // @Input() userProfile: Customer
 }
