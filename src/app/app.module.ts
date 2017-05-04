@@ -10,6 +10,7 @@ import { AppComponent }  from './app.component';
 import { BoardComponent }  from './components/board/board.component';
 import { LandingComponent }  from './components/landing/landing.component';
 import { HomeComponent }  from './components/home/home.component';
+import { UserProfileComponent }  from './components/user-profile/user-profile.component';
 
 const appRoutes: Routes = [
   // {path: 'api/auth/trello/callback', redirectTo: 'home'},
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     AppComponent,
     LandingComponent,
     BoardComponent,
-    HomeComponent
+    HomeComponent,
+    UserProfileComponent
   ],
   bootstrap:    [ AppComponent ]
 })

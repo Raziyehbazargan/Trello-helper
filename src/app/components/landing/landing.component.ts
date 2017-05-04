@@ -22,7 +22,6 @@ export class LandingComponent {
 
   redirect_home() {
     this._route.queryParams.subscribe(params => {
-      console.log('in the redirect', params);
       if (params['oauth_verifier'])
          this._router.navigate(['home']);
     })

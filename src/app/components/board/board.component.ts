@@ -20,7 +20,7 @@ export class BoardComponent implements OnInit {
     this.service.getBoards()
     //.map((val: any) => JSON.parse(val))
     .subscribe((data:any) => {
-      this.userInfo = data.url;
+      this.userInfo = data;
       this.boardsIDs = data['idBoards'];
     })
   }
