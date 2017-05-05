@@ -38,9 +38,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LandingComponent,
+    UserProfileComponent,
     BoardComponent,
     HomeComponent,
-    UserProfileComponent,
     BreadCrumbComponent
   ],
   bootstrap:    [ AppComponent ]

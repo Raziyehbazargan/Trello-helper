@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'user-profile',
@@ -6,6 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class UserProfileComponent {
-  constructor() {}
-  // @Input() userProfile: Customer
+  @Input() userProfile: Object
 }

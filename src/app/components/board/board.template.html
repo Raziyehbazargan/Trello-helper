@@ -1,23 +1,17 @@
 
 <div class="col-md-9">
   <breadcrumb></breadcrumb>
-  <div *ngFor="let board of boardsIDs">
-    <div class="card" style="margin-bottom:10px">
-      <div class="card-header">
-        Board Name
-      </div>
-      <div class="card-block">
-        <blockquote class="card-blockquote">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-            {{userInfo.bio}}
-            {{userInfo.fullName}}
-            {{userInfo.url}}
-            {{userInfo.username}}
-          </p>
-          <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
-      </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-secondary">Trello Board Lists</button>
+    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu">
+      <div *ngFor="let board of boardsIDs">
+      <a class="dropdown-item" href="#">{{board}}</a>
+      <div class="dropdown-divider"></div>
+    </div>
     </div>
   </div>
 </div>
-<user-profile></user-profile>
+<user-profile [userProfile]="userInfo"></user-profile>

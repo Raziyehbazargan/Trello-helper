@@ -2,6 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { BoardsService } from '../../services/board.service';
+import { UserProfileComponent } from '../user-profile/user-profile.component';
 import { Board } from '../../models/board';
 
 @Component({
@@ -11,16 +12,15 @@ import { Board } from '../../models/board';
 })
 
 export class BoardComponent implements OnInit {
-  userInfo: string;
+  userInfo: any;
   boardsIDs: string[];
 
   constructor(private service: BoardsService) {}
 
   ngOnInit() {
     this.service.getBoards()
-    //.map((val: any) => JSON.parse(val))
     .subscribe((data:any) => {
-      this.userInfo = data;
+      this.userInfo= data;
       this.boardsIDs = data['idBoards'];
     })
   }
