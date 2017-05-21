@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start-server": "node server.js",
-    "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
+    "start": "npm run server.js & concurrently \"npm run build:watch\" \"npm run serve\"",
     "start-debug": "DEBUG='Trello-Report*' npm start",
     "start-watch": "DEBUG='abba*' ./node_modules/nodemon/bin/nodemon.js server.js",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",

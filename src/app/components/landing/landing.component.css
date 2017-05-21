@@ -1,4 +1,23 @@
 header nav {
-  background-color: #323031;
+  background-color: #0079bf;
   color: #fff;
+}
+nav {
+  background-color: #0079bf;
+  border-color: none;
+}
+.btn-login {
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  padding: 10px 20px !important;
+  color: #FFF !important;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 2.777em;
+  line-height: 1.2em;
+  margin-top: 1.6em;
+  color: #FFF;
+  font-family: "jaf-facitweb","Helvetica Neue",Arial,sans-serif
 }
