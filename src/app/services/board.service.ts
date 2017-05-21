@@ -19,4 +19,9 @@ export class BoardsService {
       .map(this.extractData);
       //think of the map() function here as the then() method on a promise.
     }
+
+    getBoard(id: any): Observable<any[]> {
+      return this.http.get(`http://localhost:4000/api/trello/boards/${id}`)
+      .map(this.extractData)
+    }
 }

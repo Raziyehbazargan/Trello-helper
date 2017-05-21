@@ -3,6 +3,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BoardsService } from '../../services/board.service';
 import { Board } from '../../models/board';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Component({
   selector: 'boards',
@@ -12,16 +14,37 @@ import { Board } from '../../models/board';
 
 export class BoardComponent implements OnInit {
   userInfo: string;
-  boardsIDs: string[];
+  boardsIDs: any[];
+  boardsInfo: any[];
 
   constructor(private service: BoardsService) {}
 
+  getBoards() {
+    return this.service.getBoards()
+    .map((boards) => {
+      this.userInfo = boards;
+      this.boardsIDs = boards['idBoards'];
+    })
+    .catch((error) {
+      console.log(error);
+      throw error;
+    });
+  }
+
   ngOnInit() {
-    this.service.getBoards()
-    //.map((val: any) => JSON.parse(val))
+    this.getBoards()
     .subscribe((data:any) => {
-      this.userInfo = data;
-      this.boardsIDs = data['idBoards'];
+      var data;
+      this.boardsIDs.map((id:any) => {
+
+        this.service.getBoard(id)
+        .map(board => this.data.push(board))
+        .subscribe((board:any) => {
+          console.log(board);
+          //this.boardsInfo.push(board)
+          //this.boardsInfo.push(board);
+        })
+      })
     })
   }
 }

@@ -1,18 +1,11 @@
 
 <div class="col-md-9">
-  <breadcrumb></breadcrumb>
-  <div *ngFor="let board of boardsIDs">
+  <div class="col-md-3" *ngFor="let board of boardsIDs">
     <div class="card" style="margin-bottom:10px">
-      <div class="card-header">
-        Board Name
-      </div>
       <div class="card-block">
         <blockquote class="card-blockquote">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+          <p> posuere erat a ante.
             {{userInfo.bio}}
-            {{userInfo.fullName}}
-            {{userInfo.url}}
-            {{userInfo.username}}
           </p>
           <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
         </blockquote>
@@ -20,4 +13,3 @@
     </div>
   </div>
 </div>
-<user-profile></user-profile>
