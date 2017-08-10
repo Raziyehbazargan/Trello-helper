@@ -2,7 +2,7 @@
 ### Trello-report
 Trello-report is a app that  helps Trello users to provide reports, filter cards, etc.
 
-### Description
+### Description: this is an reporting app
 
 
 ### Why this should exist
